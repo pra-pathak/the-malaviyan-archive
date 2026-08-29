@@ -1,0 +1,185 @@
+@import "tailwindcss";
+
+:root {
+  --primary-navy: #0F172A;
+  --secondary-maroon: #7F1D1D;
+  --accent-gold: #F59E0B;
+  --accent-gold-light: #FBBF24;
+  --accent-gold-bg: #FEF3C7;
+  --accent-gold-text: #92400E;
+  
+  --bg-main: #FFFFFF;
+  --bg-alt: #F8F9FA;
+  
+  --text-charcoal: #1F2937;
+  --text-slate: #64748B;
+  --border-light: #E5E7EB;
+  
+  --font-outfit: var(--font-outfit), 'Outfit', sans-serif;
+  --font-inter: var(--font-inter), 'Inter', sans-serif;
+  --font-playfair: var(--font-playfair), 'Playfair Display', Georgia, serif;
+}
+
+/* Global Selection Styling */
+::selection {
+  background-color: #F59E0B;
+  color: #0F172A;
+}
+
+::-moz-selection {
+  background-color: #F59E0B;
+  color: #0F172A;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-charcoal);
+  font-family: var(--font-inter);
+  line-height: 1.7;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-outfit);
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2.75rem;
+  line-height: 1.15;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 1.25;
+}
+
+h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.font-serif-italic {
+  font-family: var(--font-playfair);
+  font-style: italic;
+}
+
+/* Texture Overlays */
+.bg-hero-navy {
+  background: 
+    linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)),
+    #0F172A;
+}
+
+.bg-dot-pattern {
+  background-image: radial-gradient(rgba(245, 158, 11, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Card Shadows & Borders */
+.card-base {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-radius: 0.75rem;
+  transition: all 0.25s ease;
+}
+
+.card-base:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--accent-gold);
+  color: var(--primary-navy);
+  font-family: var(--font-outfit);
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 10px 24px;
+  transition: all 0.2s ease;
+}
+.btn-primary:hover {
+  background-color: #FBBF24;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #FFFFFF;
+  font-family: var(--font-outfit);
+  font-weight: 600;
+  border: 1.5px solid rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  padding: 10px 24px;
+  transition: all 0.2s ease;
+}
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #FFFFFF;
+}
+
+/* Coming Soon Badges */
+.badge-soon {
+  background-color: var(--accent-gold-bg);
+  color: var(--accent-gold-text);
+  font-family: var(--font-outfit);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 4px 10px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+/* Section Alternating Classes */
+.section-white {
+  background-color: var(--bg-main);
+  color: var(--text-charcoal);
+}
+
+.section-alt {
+  background-color: var(--bg-alt);
+  color: var(--text-charcoal);
+}
+
+.section-navy {
+  background-color: var(--primary-navy);
+  color: #FFFFFF;
+}
+
+.section-maroon {
+  background-color: var(--secondary-maroon);
+  color: #FFFFFF;
+}
+
+/* Utilities */
+.gold-divider {
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent-gold);
+  border-radius: 9999px;
+  margin: 12px auto 20px;
+}
+
+/* Smooth Animations */
+@keyframes bounceSlow {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translate(-50%, 0);
+  }
+  40% {
+    transform: translate(-50%, -8px);
+  }
+  60% {
+    transform: translate(-50%, -4px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounceSlow 2.4s infinite ease-in-out;
+}

@@ -1,0 +1,1915 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="The Malaviyan Archive — Preserving the heritage, history, and memories of Pandit Madan Mohan Malaviya Hall of Residence, IIT Kharagpur. Built under the IoE Grant for IIT Kharagpur's Platinum Jubilee.">
+  <meta name="keywords"
+    content="MMM Hall, Malaviya Hall, IIT Kharagpur, IIT KGP, The Malaviyan Archive, Platinum Jubilee, Mahamana, Banaras Hindu University">
+  <meta name="author" content="Pandit Madan Mohan Malaviya Hall of Residence, IIT Kharagpur">
+  <title>The Malaviyan Archive | MMM Hall · IIT Kharagpur</title>
+
+  <!-- Google Fonts: Outfit, Inter, and Playfair Display (italic for quotes) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,400;1,600;1,700&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       DESIGN SYSTEM & CSS VARIABLES (Updated Palette v2)
+       ========================================================================== */
+    :root {
+      --color-primary: #0F172A;
+      /* Institutional Navy */
+      --color-secondary: #7F1D1D;
+      /* Deep Maroon (secondary accent only) */
+      --color-accent: #F59E0B;
+      /* Amber Gold */
+      --color-accent-light: #FBBF24;
+      /* Light Amber Gold */
+      --color-accent-bg: #FEF3C7;
+      /* Light Amber Badge BG */
+      --color-accent-text: #92400E;
+      /* Amber Brown Badge Text */
+
+      --color-bg-main: #FFFFFF;
+      /* Pure White */
+      --color-bg-alt: #F8F9FA;
+      /* Soft Off-White */
+
+      --color-text-charcoal: #1F2937;
+      /* Charcoal Body Text */
+      --color-text-slate: #64748B;
+      /* Slate Grey Muted Text */
+      --color-border: #E5E7EB;
+      /* Light Grey Border */
+      --color-white: #FFFFFF;
+      /* White */
+
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-quote: 'Playfair Display', Georgia, serif;
+
+      --container-max-width: 1140px;
+      --section-padding-y: 80px;
+      --section-padding-mobile-y: 48px;
+      --radius-sm: 6px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      --radius-full: 9999px;
+
+      --shadow-default: 0 1px 3px rgba(0, 0, 0, 0.08);
+      --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.12);
+      --transition-default: all 0.25s ease;
+    }
+
+    /* ==========================================================================
+       GLOBAL BASE & RESET
+       ========================================================================== */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      background-color: var(--color-bg-main);
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--color-text-charcoal);
+      background-color: var(--color-bg-main);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition-default);
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      transition: var(--transition-default);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--color-primary);
+    }
+
+    h1 {
+      font-size: 2.75rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ==========================================================================
+       UTILITY CLASSES
+       ========================================================================== */
+    .container {
+      width: 100%;
+      max-width: var(--container-max-width);
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    .container-narrow {
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section {
+      padding-top: var(--section-padding-y);
+      padding-bottom: var(--section-padding-y);
+      position: relative;
+    }
+
+    .bg-white {
+      background-color: var(--color-bg-main);
+    }
+
+    .bg-alt {
+      background-color: var(--color-bg-alt);
+    }
+
+    .bg-navy {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
+
+    .bg-maroon-accent {
+      background-color: var(--color-secondary);
+      color: var(--color-white);
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-gold {
+      color: var(--color-accent);
+    }
+
+    .text-navy {
+      color: var(--color-primary);
+    }
+
+    .text-slate {
+      color: var(--color-text-slate);
+    }
+
+    .font-serif-italic {
+      font-family: var(--font-quote);
+      font-style: italic;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 24px;
+      border-radius: var(--radius-md);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: var(--transition-default);
+      border: 1px solid transparent;
+      line-height: 1.4;
+      white-space: nowrap;
+    }
+
+    .btn-gold {
+      background-color: var(--color-accent);
+      color: var(--color-primary);
+      border-color: var(--color-accent);
+    }
+
+    .btn-gold:hover {
+      background-color: var(--color-accent-light);
+      border-color: var(--color-accent-light);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25);
+    }
+
+    .btn-outline-white {
+      background-color: transparent;
+      color: var(--color-white);
+      border: 1.5px solid rgba(255, 255, 255, 0.8);
+    }
+
+    .btn-outline-white:hover {
+      background-color: rgba(255, 255, 255, 0.12);
+      border-color: var(--color-white);
+    }
+
+    .btn-navy {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      border-color: var(--color-primary);
+    }
+
+    .btn-navy:hover {
+      background-color: #1E293B;
+      transform: translateY(-1px);
+    }
+
+    /* Badges */
+    .badge-soon {
+      display: inline-block;
+      background-color: var(--color-accent-bg);
+      color: var(--color-accent-text);
+      font-family: var(--font-heading);
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      vertical-align: middle;
+    }
+
+    .divider-gold {
+      width: 60px;
+      height: 3px;
+      background-color: var(--color-accent);
+      margin: 14px auto 24px;
+      border-radius: var(--radius-full);
+    }
+
+    /* ==========================================================================
+       STICKY NAVIGATION BAR (Transparent to Navy on Scroll)
+       ========================================================================== */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: #ffffff;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #E5E7EB;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .nav-brand-title {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #0F172A;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .nav-brand:hover .nav-brand-title {
+      color: var(--color-accent);
+    }
+
+    .nav-brand-subtitle {
+      font-family: var(--font-heading);
+      font-size: 0.72rem;
+      color: #64748B;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .nav-link {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #334155;
+      padding: 6px 4px;
+      position: relative;
+      transition: var(--transition-default);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-link:hover {
+      color: var(--color-accent);
+    }
+
+    .nav-link.active {
+      color: #D97706;
+      font-weight: 700;
+      background-color: transparent;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    .nav-link.active::after {
+      display: none;
+    }
+
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      text-align: center;
+      padding: 120px 24px 80px;
+      color: #0F172A;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.2)),
+        url('home-bg.jpg') center/cover no-repeat;
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: 4.25rem;
+      font-weight: 800;
+      line-height: 1.1;
+      color: #020617;
+      margin-bottom: 16px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: #1E293B;
+      margin-bottom: 14px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-founding {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      color: #B45309;
+      font-weight: 700;
+      margin-bottom: 36px;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--color-accent);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      animation: bounceSlow 2.4s infinite ease-in-out;
+      text-decoration: none;
+    }
+
+    .scroll-indicator:hover {
+      color: var(--color-white);
+    }
+
+    @keyframes bounceSlow {
+
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
+        transform: translate(-50%, 0);
+      }
+
+      40% {
+        transform: translate(-50%, -8px);
+      }
+
+      60% {
+        transform: translate(-50%, -4px);
+      }
+    }
+
+    /* Stat Cards */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .stat-card {
+      background-color: var(--color-white);
+      padding: 32px 20px;
+      border-radius: var(--radius-md);
+      text-align: center;
+      border: 1px solid var(--color-border);
+      transition: var(--transition-default);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .stat-number {
+      font-family: var(--font-heading);
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-divider {
+      width: 32px;
+      height: 2px;
+      background-color: var(--color-accent);
+      margin: 8px auto 10px;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--color-text-slate);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Section Cards */
+    .archive-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .archive-card {
+      background-color: var(--color-white);
+      border-radius: var(--radius-md);
+      padding: 28px 24px;
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-default);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition-default);
+    }
+
+    .archive-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .archive-card-icon {
+      font-size: 2rem;
+      margin-bottom: 14px;
+    }
+
+    .archive-card-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--color-primary);
+    }
+
+    .archive-card-desc {
+      font-size: 0.92rem;
+      color: var(--color-text-slate);
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .archive-card-link {
+      color: var(--color-primary);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .archive-card-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Pull Quote Section */
+    .pull-quote-section {
+      background-color: var(--color-bg-alt);
+      padding: 80px 24px;
+      text-align: center;
+    }
+
+    .quote-mark {
+      font-family: var(--font-quote);
+      font-style: italic;
+      font-size: 5rem;
+      line-height: 1;
+      color: var(--color-accent);
+      user-select: none;
+    }
+
+    .quote-text {
+      font-family: var(--font-quote);
+      font-style: italic;
+      font-size: 1.75rem;
+      line-height: 1.5;
+      color: var(--color-primary);
+      margin-top: -15px;
+      margin-bottom: 16px;
+    }
+
+    .quote-attribution {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--color-text-charcoal);
+    }
+
+    /* Contribute CTA Section */
+    .cta-banner {
+      background-color: var(--color-secondary);
+      color: var(--color-white);
+      text-align: center;
+      padding: 80px 24px;
+    }
+
+    .cta-banner h2 {
+      color: var(--color-white);
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+    }
+
+    .cta-banner p {
+      max-width: 650px;
+      margin: 0 auto 24px;
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    /* ==========================================================================
+       INNER PAGES & TIMELINE
+       ========================================================================== */
+    .facilities-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 28px;
+    }
+
+    .facility-card {
+      background-color: var(--color-white);
+      padding: 24px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+      transition: var(--transition-default);
+    }
+
+    .facility-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .facility-name {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      margin-top: 10px;
+      margin-bottom: 4px;
+    }
+
+    .facility-desc {
+      font-size: 0.9rem;
+      color: var(--color-text-slate);
+    }
+
+    /* Timeline */
+    .timeline-wrapper {
+      position: relative;
+      max-width: 860px;
+      margin: 40px auto;
+    }
+
+    .timeline-wrapper::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      background-color: var(--color-accent);
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 36px;
+      width: 50%;
+      padding: 0 32px;
+    }
+
+    .timeline-item.left {
+      left: 0;
+      text-align: right;
+    }
+
+    .timeline-item.right {
+      left: 50%;
+      text-align: left;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      top: 18px;
+      width: 14px;
+      height: 14px;
+      background-color: var(--color-primary);
+      border: 2px solid var(--color-accent);
+      border-radius: 50%;
+      z-index: 2;
+    }
+
+    .timeline-item.left .timeline-dot {
+      right: -7px;
+    }
+
+    .timeline-item.right .timeline-dot {
+      left: -7px;
+    }
+
+    .timeline-card {
+      background-color: var(--color-white);
+      padding: 22px 24px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-default);
+      transition: var(--transition-default);
+    }
+
+    .timeline-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .timeline-year {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 4px;
+    }
+
+    .timeline-desc {
+      font-size: 0.92rem;
+      color: var(--color-text-slate);
+    }
+
+    /* Placeholder Grid Boxes (Coming Soon) */
+    .coming-soon-grid {
+      display: grid;
+      gap: 20px;
+      margin: 40px auto;
+      max-width: 900px;
+    }
+
+    .grid-2x2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-3x2 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .placeholder-box {
+      background-color: #F3F4F6;
+      border: 1px solid #E5E7EB;
+      border-radius: var(--radius-md);
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+      color: #9CA3AF;
+    }
+
+    .placeholder-icon {
+      font-size: 2.2rem;
+      color: #D1D5DB;
+      margin-bottom: 8px;
+    }
+
+    .placeholder-label {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      gap: 8px;
+    }
+
+    .page-breadcrumb a {
+      color: #FBBF24;
+      font-weight: 500;
+      transition: var(--transition-default);
+    }
+
+    .page-breadcrumb a:hover {
+      color: #FDE68A;
+      text-decoration: underline;
+    }
+
+    .page-breadcrumb span.current-page {
+      color: #FFFFFF;
+      font-weight: 600;
+    }
+
+    /* Footer */
+    .site-footer {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      padding: 60px 0 0;
+      border-top: 1px solid #1E293B;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1.2fr;
+      gap: 40px;
+      padding-bottom: 40px;
+    }
+
+    .footer-col-title {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-white);
+      margin-bottom: 14px;
+    }
+
+    .footer-tagline {
+      font-size: 0.88rem;
+      color: #94A3B8;
+      line-height: 1.6;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-link {
+      font-size: 0.88rem;
+      color: #CBD5E1;
+      transition: var(--transition-default);
+    }
+
+    .footer-link:hover {
+      color: var(--color-accent);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 20px 0;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #64748B;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+
+      .archive-grid,
+      .grid-3x2,
+      .facilities-grid,
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-wrapper::before {
+        left: 20px;
+      }
+
+      .timeline-item {
+        width: 100%;
+        padding-left: 48px;
+        padding-right: 0;
+        text-align: left !important;
+      }
+
+      .timeline-item.left,
+      .timeline-item.right {
+        left: 0;
+      }
+
+      .timeline-item.left .timeline-dot,
+      .timeline-item.right .timeline-dot {
+        left: 13px;
+        right: auto;
+      }
+    }
+
+    @media (max-width: 860px) {
+
+      .nav-menu,
+      .nav-cta {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .hero-title {
+        font-size: 2.75rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-title {
+        font-size: 2.25rem;
+      }
+
+      .archive-grid,
+      .grid-2x2,
+      .grid-3x2,
+      .facilities-grid,
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-cta-group {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .hero-cta-group .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       NAVIGATION BAR
+       ========================================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <nav class="nav-container" aria-label="Main Navigation">
+        <!-- Logo -->
+        <a href="#home" class="nav-brand" id="nav-brand-logo" aria-label="The Malaviyan Archive Home"
+          style="display: flex; flex-direction: row; align-items: center; gap: 12px;">
+          <img src="logo.jpeg" alt="MMM Hall Crest Logo"
+            style="width: 42px; height: 42px; object-fit: contain; border-radius: 8px; background: rgba(255,255,255,0.1); padding: 2px; border: 1px solid rgba(255,255,255,0.2);">
+          <div style="display: flex; flex-direction: column;">
+            <span class="nav-brand-title">THE MALAVIYAN ARCHIVE</span>
+            <span class="nav-brand-subtitle">MMM Hall · IIT Kharagpur</span>
+          </div>
+        </a>
+
+        <!-- Desktop Menu Links -->
+        <ul class="nav-menu" id="desktop-nav-menu">
+          <li><a href="#home" class="nav-link" data-route="home">Home</a></li>
+          <li><a href="#about" class="nav-link" data-route="about">About</a></li>
+          <li><a href="#history" class="nav-link" data-route="history">History</a></li>
+          <li>
+            <a href="#photo-essay" class="nav-link dimmed" data-route="photo-essay">
+              Photo Essay <span class="badge-soon">Soon</span>
+            </a>
+          </li>
+          <li>
+            <a href="#voices" class="nav-link dimmed" data-route="voices">
+              Voices <span class="badge-soon">Soon</span>
+            </a>
+          </li>
+          <li>
+            <a href="#hall-of-honour" class="nav-link dimmed" data-route="hall-of-honour">
+              Hall of Honour <span class="badge-soon">Soon</span>
+            </a>
+          </li>
+          <li><a href="#mahamana" class="nav-link" data-route="mahamana">Mahamana</a></li>
+          <li><a href="#wardens-corner" class="nav-link" data-route="wardens-corner">Warden's Corner</a></li>
+          <li><a href="#contribute" class="nav-link" data-route="contribute">Contribute</a></li>
+          <li><a href="#contact" class="nav-link" data-route="contact">Contact</a></li>
+        </ul>
+
+        <!-- CTA Button -->
+        <div class="nav-cta">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScmDOUhw4Cs9gvpb3ga1W8KCAqIVbvqjS504aGHrEh3RI4Efw/viewform"
+            target="_blank" rel="noopener noreferrer" class="btn btn-gold" id="nav-cta-button">
+            Share Your Memory
+          </a>
+        </div>
+
+        <!-- Mobile Toggle -->
+        <button class="nav-toggle" id="mobile-nav-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-menu-drawer" id="mobile-menu-drawer">
+      <ul class="mobile-nav-list">
+        <li><a href="#home" class="mobile-nav-link" data-route="home">Home</a></li>
+        <li><a href="#about" class="mobile-nav-link" data-route="about">About</a></li>
+        <li><a href="#history" class="mobile-nav-link" data-route="history">History</a></li>
+        <li><a href="#photo-essay" class="mobile-nav-link" data-route="photo-essay">Photo Essay <span
+              class="badge-soon">Soon</span></a></li>
+        <li><a href="#voices" class="mobile-nav-link" data-route="voices">Voices <span
+              class="badge-soon">Soon</span></a></li>
+        <li><a href="#hall-of-honour" class="mobile-nav-link" data-route="hall-of-honour">Hall of Honour <span
+              class="badge-soon">Soon</span></a></li>
+        <li><a href="#mahamana" class="mobile-nav-link" data-route="mahamana">Mahamana's Legacy</a></li>
+        <li><a href="#wardens-corner" class="mobile-nav-link" data-route="wardens-corner">Warden's Corner</a></li>
+        <li><a href="#contribute" class="mobile-nav-link" data-route="contribute">Contribute</a></li>
+        <li><a href="#contact" class="mobile-nav-link" data-route="contact">Contact</a></li>
+      </ul>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScmDOUhw4Cs9gvpb3ga1W8KCAqIVbvqjS504aGHrEh3RI4Efw/viewform"
+        target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="width: 100%; text-align: center;">
+        Share Your Memory
+      </a>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       MAIN VIEW CONTAINER
+       ========================================================================== -->
+  <main id="main-content">
+
+    <!-- PAGE 1: HOME -->
+    <section class="page-view active-page" id="page-home" data-page-name="home">
+      <!-- Hero -->
+      <div class="hero-section" id="hero-banner">
+        <div class="hero-content">
+          <span class="hero-eyebrow">PANDIT MADAN MOHAN MALAVIYA HALL OF RESIDENCE · IIT KHARAGPUR</span>
+          <h1 class="hero-title">The Malaviyan Archive</h1>
+          <p class="hero-subtitle">Preserving the Story of the Largest Hall at IIT Kharagpur</p>
+          <div style="margin-bottom: 32px;">
+            <span
+              style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 18px; border-radius: 9999px; background: rgba(255, 255, 255, 0.95); border: 1px solid #E2E8F0; box-shadow: 0 1px 3px rgba(0,0,0,0.08); color: #020617; font-family: var(--font-heading); font-weight: 700; font-size: 0.95rem;">
+              <span
+                style="width: 8px; height: 8px; border-radius: 50%; background: #F59E0B; display: inline-block;"></span>
+              Founded 27th February 2005
+            </span>
+          </div>
+
+          <div class="hero-cta-group">
+            <a href="#about-initiative" class="btn btn-gold" id="explore-archive-btn">
+              Explore the Archive →
+            </a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScmDOUhw4Cs9gvpb3ga1W8KCAqIVbvqjS504aGHrEh3RI4Efw/viewform"
+              target="_blank" rel="noopener noreferrer" class="btn btn-gold" id="hero-share-memory-btn">
+              Share Your Memory
+            </a>
+          </div>
+        </div>
+
+        <a href="#about-initiative" class="scroll-indicator" id="hero-scroll-indicator"
+          aria-label="Scroll to About Initiative">
+          <span>Explore</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <!-- About Initiative (Soft Off-White) -->
+      <section class="section bg-alt" id="about-initiative">
+        <div class="container container-narrow text-center">
+          <span class="text-gold"
+            style="font-family: var(--font-heading); font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;">Preserving
+            Living History</span>
+          <h2 style="margin-top: 6px;">About This Initiative</h2>
+          <div class="divider-gold"></div>
+          <p style="font-size: 1.1rem; line-height: 1.8;">
+            &ldquo;As part of IIT Kharagpur's Platinum Jubilee celebrations, MMM Hall is building a permanent digital
+            archive of its history, spaces, people, and stories. The Malaviyan Archive is that place — a home for every
+            memory, every face, and every moment that has made this hall what it is over the past two decades.&rdquo;
+          </p>
+          <p style="font-size: 0.88rem; color: var(--color-text-slate); margin-top: 14px; font-style: italic;">
+            Funded under the Institute of Eminence (IoE) Grant | IIT Kharagpur Platinum Jubilee 2026
+          </p>
+        </div>
+      </section>
+
+      <!-- Hall at a Glance (Pure White) -->
+      <section class="section bg-white" id="hall-stats">
+        <div class="container">
+          <div class="text-center" style="margin-bottom: 36px;">
+            <span class="text-gold"
+              style="font-family: var(--font-heading); font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;">Key
+              Milestones</span>
+            <h2 style="margin-top: 6px;">Hall at a Glance</h2>
+            <div class="divider-gold"></div>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-number">2005</div>
+              <div class="stat-divider"></div>
+              <div class="stat-label">Year of Founding</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">2000+</div>
+              <div class="stat-divider"></div>
+              <div class="stat-label">Residents Today</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">20</div>
+              <div class="stat-divider"></div>
+              <div class="stat-label">Years of Legacy</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">#1</div>
+              <div class="stat-divider"></div>
+              <div class="stat-label">Largest Hall at IIT KGP</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Cards (Soft Off-White) -->
+      <section class="section bg-alt" id="inside-archive">
+        <div class="container">
+          <div class="text-center" style="margin-bottom: 36px;">
+            <span class="text-gold"
+              style="font-family: var(--font-heading); font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;">Heritage
+              Modules</span>
+            <h2 style="margin-top: 6px;">What's Inside the Archive</h2>
+            <p style="color: var(--color-text-slate); font-size: 0.95rem; margin-top: 4px;">Explore the chronicles, oral
+              histories, and distinguished heritage of MMM Hall</p>
+            <div class="divider-gold"></div>
+          </div>
+
+          <div class="archive-grid">
+            <div class="archive-card">
+              <div>
+                <div class="archive-card-icon">🏛️</div>
+                <h3 class="archive-card-title">About MMM Hall</h3>
+                <p class="archive-card-desc">The hall's story, facilities, and vibrant residential community.</p>
+              </div>
+              <a href="#about" class="archive-card-link">Explore →</a>
+            </div>
+
+            <div class="archive-card">
+              <div>
+                <div class="archive-card-icon">📜</div>
+                <h3 class="archive-card-title">History &amp; Milestones</h3>
+                <p class="archive-card-desc">Twenty years of the hall's journey, milestones, and evolution.</p>
+              </div>
+              <a href="#history" class="archive-card-link">Explore →</a>
+            </div>
+
+            <div class="archive-card">
+              <div>
+                <div class="archive-card-icon">📷</div>
+                <h3 class="archive-card-title">Same Ground, New Footsteps</h3>
+                <p class="archive-card-desc">Then and Now photo essay comparing spaces across 20 years.</p>
+              </div>
+              <div><span class="badge-soon">Coming Soon</span></div>
+            </div>
+
+            <div class="archive-card">
+              <div>
+                <div class="archive-card-icon">🎙️</div>
+                <h3 class="archive-card-title">Voices of Malaviya</h3>
+                <p class="archive-card-desc">Oral history video series featuring alumni, wardens, and staff.</p>
+              </div>
+              <div><span class="badge-soon">Coming Soon</span></div>
+            </div>
+
+            <div class="archive-card">
+              <div>
+                <div class="archive-card-icon">🌟</div>
+                <h3 class="archive-card-title">Hall of Honour</h3>
+                <p class="archive-card-desc">Distinguished alumni of MMM Hall across diverse fields.</p>
+              </div>
+              <div><span class="badge-soon">Coming Soon</span></div>
+            </div>
+
+            <div class="archive-card">
+              <div>
+                <div class="archive-card-icon">🕯️</div>
+                <h3 class="archive-card-title">Mahamana's Legacy</h3>
+                <p class="archive-card-desc">The life, vision, and principles of the man behind the name.</p>
+              </div>
+              <a href="#mahamana" class="archive-card-link">Explore →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pull Quote (Soft Off-White) -->
+      <section class="pull-quote-section" id="home-pull-quote">
+        <div class="container container-narrow">
+          <div class="quote-mark">&ldquo;</div>
+          <blockquote class="quote-text">
+            The hall never really slept. No matter what time it was, there was always someone in the common room, always
+            a conversation happening somewhere. That was Malaviya.
+          </blockquote>
+          <div class="quote-attribution">— Alumni, MMM Hall, IIT Kharagpur</div>
+          <div style="font-size: 0.8rem; color: var(--color-text-slate); margin-top: 4px; font-style: italic;">
+            (Placeholder — real alumni memories coming soon)</div>
+        </div>
+      </section>
+
+      <!-- Contribute CTA (Deep Maroon Accent Block) -->
+      <section class="cta-banner" id="home-contribute-cta">
+        <div class="container">
+          <h2>Your memory belongs here.</h2>
+          <p>
+            We are collecting photographs and stories from every batch of MMM Hall. It takes 5 minutes — and it becomes
+            a permanent part of the hall's history.
+          </p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScmDOUhw4Cs9gvpb3ga1W8KCAqIVbvqjS504aGHrEh3RI4Efw/viewform"
+            target="_blank" rel="noopener noreferrer" class="btn btn-gold">
+            Share Your Memory →
+          </a>
+        </div>
+      </section>
+    </section>
+
+    <!-- PAGE 2: ABOUT -->
+    <section class="page-view" id="page-about" data-page-name="about">
+      <div class="page-header-banner">
+        <div class="container">
+          <h1>About MMM Hall</h1>
+          <div class="page-breadcrumb">
+            <a href="#home">Home</a> &gt; <span>About MMM Hall</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section bg-white">
+        <div class="container container-narrow">
+          <div class="text-center" style="margin-bottom: 28px;">
+            <span class="text-gold"
+              style="font-family: var(--font-heading); font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;">Foundation
+              &amp; Heritage</span>
+            <h2 style="margin-top: 6px;">A Two-Decade Legacy of Excellence</h2>
+            <div class="divider-gold"></div>
+          </div>
+
+          <p>
+            Pandit Madan Mohan Malaviya Hall of Residence was established on <strong>27th February 2005</strong> at the
+            historic campus of the Indian Institute of Technology Kharagpur. Conceived to meet the expanding residential
+            requirements of India's premier technical institute, the hall was named in perpetual honour of Mahamana
+            Pandit Madan Mohan Malaviya — visionary nationalist leader, pioneer of modern higher education, and founder
+            of Banaras Hindu University.
+          </p>
+          <p>
+            Today, MMM Hall stands with pride as the largest hall of residence in IIT Kharagpur, accommodating over
+            <strong>2,000 undergraduate and postgraduate scholars</strong>. Spanning extensive architectural blocks
+            surrounded by green quadrangles, the hall provides a comprehensive ecosystem supporting rigorous academic
+            pursuits, vibrant cultural expressions, competitive sports, and technological innovation.
+          </p>
+          <p>
+            Beyond its expansive physical infrastructure, MMM Hall is renowned for its unmatched camaraderie, warmth,
+            and collective spirit. Here, students from every corner of India and international backgrounds live,
+            collaborate, and form lifelong friendships. From passionate discussions in the common rooms during late
+            hours to enthusiastic participation in institute-level championships, life at MMM Hall instills resilience,
+            mutual respect, and leadership.
+          </p>
+          <p>
+            As the hall crosses its twentieth anniversary coinciding with IIT Kharagpur's Platinum Jubilee celebrations,
+            it continues to evolve. Modernized amenities, dynamic student-led bodies, and an active alumni network
+            ensure that every boarder experiences an inspiring environment rooted in Mahamana's timeless ideals of
+            enlightenment and character.
+          </p>
+        </div>
+      </div>
+
+      <div class="section bg-alt">
+        <div class="container">
+          <div class="text-center" style="margin-bottom: 28px;">
+            <span class="text-gold"
+              style="font-family: var(--font-heading); font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;">State-of-the-Art
+              Living</span>
+            <h2 style="margin-top: 6px;">Hall Facilities &amp; Amenities</h2>
+            <div class="divider-gold"></div>
+          </div>
+
+          <div class="facilities-grid">
+            <div class="facility-card">
+              <div style="font-size: 1.8rem;">🛋️</div>
+              <h3 class="facility-name">Multiple Common Rooms</h3>
+              <p class="facility-desc">Spacious community lounges equipped with television, table tennis, and seating
+                for recreation and community life.</p>
+            </div>
+            <div class="facility-card">
+              <div style="font-size: 1.8rem;">🎵</div>
+              <h3 class="facility-name">Music Room</h3>
+              <p class="facility-desc">A dedicated acoustic space for performers, bands, and music enthusiasts to
+                practice and nurture artistic talent.</p>
+            </div>
+            <div class="facility-card">
+              <div style="font-size: 1.8rem;">📚</div>
+              <h3 class="facility-name">Library &amp; Reading Room</h3>
+              <p class="facility-desc">A quiet sanctuary stocked with academic literature, periodicals, and study spaces
+                supporting resident scholars.</p>
+            </div>
+            <div class="facility-card">
+              <div style="font-size: 1.8rem;">💻</div>
+              <h3 class="facility-name">Technology Room</h3>
+              <p class="facility-desc">Equipped for technical learning, robotics, coding projects, and team hackathons
+                with high-speed connectivity.</p>
+            </div>
+            <div class="facility-card">
+              <div style="font-size: 1.8rem;">⚽</div>
+              <h3 class="facility-name">Sports Grounds &amp; Courts</h3>
+              <p class="facility-desc">Home to spirited inter-hall competitions, featuring badminton courts, table
+                tennis arenas, and playing fields.</p>
+            </div>
+            <div class="facility-card">
+              <div style="font-size: 1.8rem;">🍽️</div>
+              <h3 class="facility-name">Dining Hall</h3>
+              <p class="facility-desc">The vibrant heart of daily hall life, serving nutritious meals and hosting
+                celebratory hall dinners and banquets.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 3: HISTORY -->
+    <section class="page-view" id="page-history" data-page-name="history">
+      <div class="page-header-banner">
+        <div class="container">
+          <h1>Twenty Years of Malaviya</h1>
+          <div class="page-breadcrumb">
+            <a href="#home">Home</a> &gt; <span>History &amp; Milestones</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section bg-white">
+        <div class="container container-narrow">
+          <div class="text-center" style="margin-bottom: 28px;">
+            <span class="text-gold"
+              style="font-family: var(--font-heading); font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;">Origins</span>
+            <h2 style="margin-top: 6px;">The Founding Story</h2>
+            <div class="divider-gold"></div>
+          </div>
+          <p>
+            At the turn of the millennium, as IIT Kharagpur embarked on an ambitious expansion to educate larger cohorts
+            of young engineers and scientists, the institute recognized the urgent need for a contemporary residential
+            complex that set new benchmarks in scale and student living.
+          </p>
+          <p>
+            On <strong>27th February 2005</strong>, the foundation of Pandit Madan Mohan Malaviya Hall of Residence was
+            formally commemorated. Bestowed with the name of Mahamana Pandit Madan Mohan Malaviya, the hall was
+            dedicated to fostering holistic education, national service, and moral character.
+          </p>
+        </div>
+      </div>
+
+      <div class="section bg-alt">
+        <div class="container">
+          <div class="text-center" style="margin-bottom: 28px;">
+            <span class="text-gold"
+              style="font-family: var(--font-heading); font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;">Chronicles</span>
+            <h2 style="margin-top: 6px;">Two Decades in Milestones</h2>
+            <div class="divider-gold"></div>
+          </div>
+
+          <div class="timeline-wrapper">
+            <div class="timeline-item left">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-year">27 Feb 2005</div>
+                <p class="timeline-desc">Pandit Madan Mohan Malaviya Hall of Residence officially founded at IIT
+                  Kharagpur.</p>
+              </div>
+            </div>
+            <div class="timeline-item right">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-year">2005–2010</div>
+                <p class="timeline-desc">Hall grows rapidly, establishing residential culture, hall council, and
+                  traditions.</p>
+              </div>
+            </div>
+            <div class="timeline-item left">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-year">2010–2015</div>
+                <p class="timeline-desc">Expansion of infrastructure including music room, technology room, and sports
+                  fields.</p>
+              </div>
+            </div>
+            <div class="timeline-item right">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-year">2015–2020</div>
+                <p class="timeline-desc">MMM Hall becomes the largest hall of residence at IIT KGP, crossing 2000
+                  boarders.</p>
+              </div>
+            </div>
+            <div class="timeline-item left">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-year">2026</div>
+                <p class="timeline-desc">Platinum Jubilee of IIT Kharagpur. The Malaviyan Archive initiative inaugurated
+                  under IoE Grant.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 4: PHOTO ESSAY -->
+    <section class="page-view" id="page-photo-essay" data-page-name="photo-essay">
+      <div class="page-header-banner">
+        <div class="container">
+          <h1>Same Ground, New Footsteps</h1>
+          <div class="page-breadcrumb">
+            <a href="#home">Home</a> &gt; <span>Photo Essay</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section bg-white">
+        <div class="container text-center">
+          <p class="font-serif-italic"
+            style="font-size: 1.25rem; max-width: 760px; margin: 0 auto 24px; color: var(--color-primary);">
+            &ldquo;A carefully composed series of paired photographs — archival images of MMM Hall from its early years
+            placed side by side with modern recreations of the same spaces.&rdquo;
+          </p>
+          <span class="badge-soon" style="font-size: 0.85rem; padding: 6px 16px;">COMING SOON · Live by Autumn
+            2026</span>
+
+          <div class="coming-soon-grid grid-2x2">
+            <div class="placeholder-box">
+              <div class="placeholder-icon">📷</div>
+              <div class="placeholder-label">The Main Gate &amp; Entrance Arch</div>
+              <div style="font-size: 0.8rem; color: var(--color-text-slate); margin-top: 4px;">2005 vs 2026</div>
+            </div>
+            <div class="placeholder-box">
+              <div class="placeholder-icon">📷</div>
+              <div class="placeholder-label">The Central Quadrangle &amp; Corridors</div>
+              <div style="font-size: 0.8rem; color: var(--color-text-slate); margin-top: 4px;">2008 vs 2026</div>
+            </div>
+            <div class="placeholder-box">
+              <div class="placeholder-icon">📷</div>
+              <div class="placeholder-label">The Common Room &amp; Lounge</div>
+              <div style="font-size: 0.8rem; color: var(--color-text-slate); margin-top: 4px;">2012 vs 2026</div>
+            </div>
+            <div class="placeholder-box">
+              <div class="placeholder-icon">📷</div>
+              <div class="placeholder-label">The Dining Hall Banquets</div>
+              <div style="font-size: 0.8rem; color: var(--color-text-slate); margin-top: 4px;">2015 vs 2026</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 5: VOICES -->
+    <section class="page-view" id="page-voices" data-page-name="voices">
+      <div class="page-header-banner">
+        <div class="container">
+          <h1>Voices of Malaviya</h1>
+          <div class="page-breadcrumb">
+            <a href="#home">Home</a> &gt; <span>Voices of Malaviya</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section bg-white">
+        <div class="container text-center">
+          <p class="font-serif-italic"
+            style="font-size: 1.25rem; max-width: 760px; margin: 0 auto 24px; color: var(--color-primary);">
+            &ldquo;An oral history video series featuring former wardens, alumni from every decade, current residents,
+            and long-serving staff.&rdquo;
+          </p>
+          <span class="badge-soon" style="font-size: 0.85rem; padding: 6px 16px;">COMING SOON · In Active
+            Production</span>
+
+          <div class="coming-soon-grid grid-2x2">
+            <div class="placeholder-box">
+              <div class="placeholder-icon">▶</div>
+              <div class="placeholder-label">Episode 1: The Founding Years (2005)</div>
+              <div style="font-size: 0.8rem; color: var(--color-text-slate); margin-top: 4px;">Oral History Film · 12
+                Mins</div>
+            </div>
+            <div class="placeholder-box">
+              <div class="placeholder-icon">▶</div>
+              <div class="placeholder-label">Episode 2: Hall Culture &amp; Illumination</div>
+              <div style="font-size: 0.8rem; color: var(--color-text-slate); margin-top: 4px;">Oral History Film · 15
+                Mins</div>
+            </div>
+            <div class="placeholder-box">
+              <div class="placeholder-icon">▶</div>
+              <div class="placeholder-label">Episode 3: The Warden's Perspectives</div>
+              <div style="font-size: 0.8rem; color: var(--color-text-slate); margin-top: 4px;">Oral History Film · 14
+                Mins</div>
+            </div>
+            <div class="placeholder-box">
+              <div class="placeholder-icon">▶</div>
+              <div class="placeholder-label">Episode 4: Voices Across Decades</div>
+              <div style="font-size: 0.8rem; color: var(--color-text-slate); margin-top: 4px;">Oral History Film · 18
+                Mins</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 6: HALL OF HONOUR -->
+    <section class="page-view" id="page-hall-of-honour" data-page-name="hall-of-honour">
+      <div class="page-header-banner">
+        <div class="container">
+          <h1>Hall of Honour</h1>
+          <div class="page-breadcrumb">
+            <a href="#home">Home</a> &gt; <span>Hall of Honour</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section bg-white">
+        <div class="container text-center">
+          <p class="font-serif-italic"
+            style="font-size: 1.25rem; max-width: 760px; margin: 0 auto 24px; color: var(--color-primary);">
+            &ldquo;A permanent record of the distinguished alumni of Pandit Madan Mohan Malaviya Hall of
+            Residence.&rdquo;
+          </p>
+          <span class="badge-soon" style="font-size: 0.85rem; padding: 6px 16px;">COMING SOON · Nominations Open</span>
+
+          <div class="coming-soon-grid grid-3x2">
+            <div class="placeholder-box">
+              <div class="placeholder-icon">👤</div>
+              <div class="placeholder-label">Technology &amp; Research</div>
+            </div>
+            <div class="placeholder-box">
+              <div class="placeholder-icon">👤</div>
+              <div class="placeholder-label">Public Service &amp; Policy</div>
+            </div>
+            <div class="placeholder-box">
+              <div class="placeholder-icon">👤</div>
+              <div class="placeholder-label">Entrepreneurship</div>
+            </div>
+            <div class="placeholder-box">
+              <div class="placeholder-icon">👤</div>
+              <div class="placeholder-label">Academia &amp; Faculty</div>
+            </div>
+            <div class="placeholder-box">
+              <div class="placeholder-icon">👤</div>
+              <div class="placeholder-label">Aerospace &amp; Defence</div>
+            </div>
+            <div class="placeholder-box">
+              <div class="placeholder-icon">👤</div>
+              <div class="placeholder-label">Social Impact</div>
+            </div>
+          </div>
+
+          <div style="margin-top: 32px;">
+            <a href="mailto:mmmhallchronicles@gmail.com?subject=Nomination%20for%20MMM%20Hall%20of%20Honour"
+              class="btn btn-navy">
+              Nominate an Alumnus →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 7: MAHAMANA -->
+    <section class="page-view" id="page-mahamana" data-page-name="mahamana">
+      <div class="page-header-banner">
+        <div class="container">
+          <h1>Mahamana Pandit Madan Mohan Malaviya</h1>
+          <p class="page-header-subtitle">The Man Behind the Name</p>
+          <div class="page-breadcrumb">
+            <a href="#home">Home</a> &gt; <span>Mahamana's Legacy</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section bg-white">
+        <div class="container">
+          <div class="text-center" style="margin-bottom: 36px;">
+            <span class="text-gold"
+              style="font-family: var(--font-heading); font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;">Biography</span>
+            <h2 style="margin-top: 6px;">Who Was Mahamana?</h2>
+            <div class="divider-gold"></div>
+          </div>
+
+          <div
+            style="display: grid; grid-template-columns: 1fr 1.6fr; gap: 40px; align-items: center; max-width: 1000px; margin: 0 auto;">
+            <div style="text-align: center;">
+              <div
+                style="border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 3px solid #fff; max-width: 320px; margin: 0 auto;">
+                <img src="mahamana.jpg" alt="Bharat Ratna Mahamana Pandit Madan Mohan Malaviya"
+                  style="width: 100%; height: auto; display: block;">
+                <div
+                  style="background: #0F172A; color: #fff; padding: 8px 12px; font-size: 0.8rem; font-family: var(--font-heading);">
+                  <strong>Bharat Ratna</strong><br>
+                  <span style="color: var(--color-accent); font-size: 0.75rem;">Pandit Madan Mohan Malaviya
+                    (1861–1946)</span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <p>
+                Born on <strong>25th December 1861 in Allahabad</strong>, Mahamana Pandit Madan Mohan Malaviya was one
+                of the most luminous figures in Indian history. A profound scholar, educationist, journalist, and
+                lawyer, he was elected President of the Indian National Congress for four terms.
+              </p>
+              <p>
+                His crowning triumph was the founding of <strong>Banaras Hindu University (BHU) in 1916</strong>, one of
+                Asia's largest residential universities. He was posthumously awarded the <strong>Bharat Ratna</strong>
+                in 2014.
+              </p>
+              <p>
+                Pandit Madan Mohan Malaviya Hall of Residence at IIT Kharagpur proudly bears his name as a living
+                aspiration to foster leadership, moral character, and scientific excellence.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section bg-alt">
+        <div class="container container-narrow text-center">
+          <div style="margin-bottom: 32px;">
+            <span class="text-gold"
+              style="font-family: var(--font-heading); font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;">Philosophy</span>
+            <h2 style="margin-top: 6px;">In His Own Words</h2>
+            <div class="divider-gold"></div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 20px;">
+            <div style="background: #fff; padding: 28px; border-radius: 8px; border: 1px solid var(--color-border);">
+              <p class="font-serif-italic" style="font-size: 1.35rem; color: var(--color-primary); margin-bottom: 8px;">
+                &ldquo;We must make our young men and women not only educated but enlightened.&rdquo;
+              </p>
+              <span style="font-size: 0.85rem; font-weight: 700; font-family: var(--font-heading);">— Mahamana Pandit
+                Madan Mohan Malaviya</span>
+            </div>
+            <div style="background: #fff; padding: 28px; border-radius: 8px; border: 1px solid var(--color-border);">
+              <p class="font-serif-italic" style="font-size: 1.35rem; color: var(--color-primary); margin-bottom: 8px;">
+                &ldquo;The future of India lies in its villages.&rdquo;
+              </p>
+              <span style="font-size: 0.85rem; font-weight: 700; font-family: var(--font-heading);">— Mahamana Pandit
+                Madan Mohan Malaviya</span>
+            </div>
+            <div style="background: #fff; padding: 28px; border-radius: 8px; border: 1px solid var(--color-border);">
+              <p class="font-serif-italic" style="font-size: 1.35rem; color: var(--color-primary); margin-bottom: 8px;">
+                &ldquo;Education is the greatest gift one can give to the nation.&rdquo;
+              </p>
+              <span style="font-size: 0.85rem; font-weight: 700; font-family: var(--font-heading);">— Mahamana Pandit
+                Madan Mohan Malaviya</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 8: WARDEN'S CORNER -->
+    <section class="page-view" id="page-wardens-corner" data-page-name="wardens-corner">
+      <div class="page-header-banner">
+        <div class="container">
+          <h1>Warden's Corner</h1>
+          <div class="page-breadcrumb">
+            <a href="#home">Home</a> &gt; <span>Warden's Corner</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section bg-white">
+        <div class="container">
+          <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: start;">
+            <div
+              style="background: var(--color-bg-alt); padding: 32px 24px; border-radius: 12px; border: 1px solid var(--color-border); text-align: center;">
+              <div
+                style="width: 140px; height: 140px; border-radius: 50%; overflow: hidden; margin: 0 auto 16px; border: 4px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                <img src="warden.webp" alt="Bharath H. Aithal — Warden, MMM Hall"
+                  style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <h3 style="font-size: 1.25rem;">Bharath H. Aithal</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-slate); margin-top: 4px;">Warden, MMM Hall, IIT
+                Kharagpur</p>
+            </div>
+            <div>
+              <h2>Message from the Warden</h2>
+              <div class="divider-gold" style="margin-left: 0;"></div>
+              <p>
+                &ldquo;Welcome to <strong>The Malaviyan Archive</strong> — a project that is as meaningful to me as it
+                is to every resident, past and present, of this remarkable hall. MMM Hall is not just a building. It is
+                a community, a culture, and a story that has been building since 27th February 2005.&rdquo;
+              </p>
+              <p>
+                &ldquo;The MMM Hall Chronicles initiative, launched as part of IIT Kharagpur's Platinum Jubilee, is our
+                effort to ensure that this story is never lost. We are collecting photographs, recording memories, and
+                building a permanent digital archive.&rdquo;
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 9: CONTRIBUTE -->
+    <section class="page-view" id="page-contribute" data-page-name="contribute">
+      <div class="page-header-banner">
+        <div class="container">
+          <h1>Contribute Your Memory</h1>
+          <p class="page-header-subtitle">Your story belongs here.</p>
+          <div class="page-breadcrumb">
+            <a href="#home">Home</a> &gt; <span>Contribute Your Memory</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section bg-white">
+        <div class="container container-narrow text-center">
+          <h2>Why Contribute?</h2>
+          <div class="divider-gold"></div>
+          <p style="font-size: 1.1rem; line-height: 1.8;">
+            &ldquo;The Malaviyan Archive is only as rich as the memories that go into it. Every photograph you share,
+            every story you write, every name you remember — it all becomes part of a permanent record.&rdquo;
+          </p>
+        </div>
+
+        <div class="container" style="margin-top: 40px;">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLScmDOUhw4Cs9gvpb3ga1W8KCAqIVbvqjS504aGHrEh3RI4Efw/viewform?embedded=true"
+            width="100%" height="1200" style="border: 1px solid var(--color-border); border-radius: 8px;"
+            title="Malaviyan Archive Submission Form">
+            Loading form...
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 10: CONTACT -->
+    <section class="page-view" id="page-contact" data-page-name="contact">
+      <div class="page-header-banner">
+        <div class="container">
+          <h1>Contact Us</h1>
+          <div class="page-breadcrumb">
+            <a href="#home">Home</a> &gt; <span>Contact Us</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section bg-white">
+        <div class="container">
+          <div style="display: grid; grid-template-columns: 1fr 1.3fr; gap: 40px;">
+            <div
+              style="background: var(--color-bg-alt); padding: 32px; border-radius: 8px; border: 1px solid var(--color-border);">
+              <h2>Get in Touch</h2>
+              <div class="divider-gold" style="margin-left: 0;"></div>
+              <p><strong>Email:</strong> <a href="mailto:mmmhallchronicles@gmail.com"
+                  class="text-gold">mmmhallchronicles@gmail.com</a></p>
+              <p><strong>Address:</strong> Pandit Madan Mohan Malaviya Hall of Residence, IIT Kharagpur, West Bengal —
+                721302</p>
+              <p><strong>Response Time:</strong> Within 2–3 working days.</p>
+            </div>
+
+            <div
+              style="background: var(--color-bg-alt); padding: 32px; border-radius: 8px; border: 1px solid var(--color-border);">
+              <h2>Send a Message</h2>
+              <div class="divider-gold" style="margin-left: 0;"></div>
+              <form onsubmit="event.preventDefault(); window.location.href='mailto:mmmhallchronicles@gmail.com';">
+                <input type="text" placeholder="Your Name" required
+                  style="width: 100%; padding: 12px; margin-bottom: 12px; border: 1px solid var(--color-border); border-radius: 6px;">
+                <input type="email" placeholder="Email Address" required
+                  style="width: 100%; padding: 12px; margin-bottom: 12px; border: 1px solid var(--color-border); border-radius: 6px;">
+                <input type="text" placeholder="Subject" required
+                  style="width: 100%; padding: 12px; margin-bottom: 12px; border: 1px solid var(--color-border); border-radius: 6px;">
+                <textarea rows="4" placeholder="Message" required
+                  style="width: 100%; padding: 12px; margin-bottom: 16px; border: 1px solid var(--color-border); border-radius: 6px;"></textarea>
+                <button type="submit" class="btn btn-gold" style="width: 100%;">Send Message</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-col-title">THE MALAVIYAN ARCHIVE</div>
+          <p class="footer-tagline">
+            The official heritage repository of Pandit Madan Mohan Malaviya Hall of Residence, IIT Kharagpur. Built as a
+            living celebration of two decades of community.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Quick Navigation</div>
+          <ul class="footer-links">
+            <li><a href="#home" class="footer-link">Home</a></li>
+            <li><a href="#about" class="footer-link">About MMM Hall</a></li>
+            <li><a href="#history" class="footer-link">History &amp; Milestones</a></li>
+            <li><a href="#photo-essay" class="footer-link">Photo Essay (Soon)</a></li>
+            <li><a href="#voices" class="footer-link">Voices of Malaviya (Soon)</a></li>
+            <li><a href="#hall-of-honour" class="footer-link">Hall of Honour (Soon)</a></li>
+            <li><a href="#mahamana" class="footer-link">Mahamana's Legacy</a></li>
+            <li><a href="#wardens-corner" class="footer-link">Warden's Corner</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Archive Secretariat</div>
+          <p style="font-size: 0.88rem; color: #CBD5E1;">
+            <strong>Email:</strong> <a href="mailto:mmmhallchronicles@gmail.com"
+              style="color: var(--color-accent);">mmmhallchronicles@gmail.com</a><br>
+            <strong>Address:</strong> MMM Hall, IIT Kharagpur — 721302<br>
+            <span style="color: var(--color-accent);">IIT KGP Platinum Jubilee 2026 · IoE Grant</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        &copy; 2026 Pandit Madan Mohan Malaviya Hall of Residence, IIT Kharagpur. Built under the IoE Grant, Platinum
+        Jubilee Initiative.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       JAVASCRIPT: CLIENT-SIDE ROUTING & SCROLL BEHAVIOR
+       ========================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const validRoutes = [
+        'home',
+        'about',
+        'history',
+        'photo-essay',
+        'voices',
+        'hall-of-honour',
+        'mahamana',
+        'wardens-corner',
+        'contribute',
+        'contact'
+      ];
+
+      const pages = document.querySelectorAll('.page-view');
+      const desktopNavLinks = document.querySelectorAll('.nav-menu .nav-link');
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav-list .mobile-nav-link');
+      const mobileNavToggle = document.getElementById('mobile-nav-toggle');
+      const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
+      const siteHeader = document.getElementById('site-header');
+
+      // Scroll listener for header background
+      function updateHeaderScroll() {
+        const hash = window.location.hash.replace(/^#/, '').trim() || 'home';
+        if (hash === 'home') {
+          if (window.scrollY > 80) {
+            siteHeader.classList.add('scrolled');
+          } else {
+            siteHeader.classList.remove('scrolled');
+          }
+          siteHeader.classList.remove('solid');
+        } else {
+          siteHeader.classList.add('solid');
+          siteHeader.classList.remove('scrolled');
+        }
+      }
+
+      window.addEventListener('scroll', updateHeaderScroll);
+
+      function navigateTo(routeName, scrollToTop = true) {
+        let targetRoute = routeName.replace(/^#/, '').trim();
+        if (!targetRoute || !validRoutes.includes(targetRoute)) {
+          targetRoute = 'home';
+        }
+
+        pages.forEach(page => {
+          if (page.getAttribute('data-page-name') === targetRoute) {
+            page.classList.add('active-page');
+          } else {
+            page.classList.remove('active-page');
+          }
+        });
+
+        desktopNavLinks.forEach(link => {
+          if (link.getAttribute('data-route') === targetRoute) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+
+        mobileNavLinks.forEach(link => {
+          if (link.getAttribute('data-route') === targetRoute) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+
+        if (mobileMenuDrawer.classList.contains('open')) {
+          mobileMenuDrawer.classList.remove('open');
+          mobileNavToggle.classList.remove('open');
+        }
+
+        updateHeaderScroll();
+
+        if (scrollToTop) {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }
+
+      function handleHashChange() {
+        const hash = window.location.hash;
+        if (hash) {
+          if (hash === '#about-initiative') {
+            navigateTo('home', false);
+            const targetEl = document.getElementById('about-initiative');
+            if (targetEl) {
+              targetEl.scrollIntoView({ behavior: 'smooth' });
+            }
+            return;
+          }
+          navigateTo(hash);
+        } else {
+          navigateTo('home', false);
+        }
+      }
+
+      handleHashChange();
+      window.addEventListener('hashchange', handleHashChange);
+
+      if (mobileNavToggle && mobileMenuDrawer) {
+        mobileNavToggle.addEventListener('click', () => {
+          const isOpen = mobileMenuDrawer.classList.toggle('open');
+          mobileNavToggle.classList.toggle('open', isOpen);
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>
